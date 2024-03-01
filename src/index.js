@@ -1,13 +1,26 @@
-import ReactDOM from 'react-dom/client';
+// import ReactDOM from 'react-dom/client';
 
+// import './index.css';
+// import App from './App';
+// import CartProvider from './components/Store/CartProvider';
+
+
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(
+//     <CartProvider>
+//         <App />
+//     </CartProvider>
+// );
+
+
+import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import CartProvider from './components/Store/CartProvider';
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-    <CartProvider>
-        <App />
-    </CartProvider>
+ReactDOM.render(
+  <CartProvider>
+    <App />
+  </CartProvider>,
+  document.getElementById('root')
 );

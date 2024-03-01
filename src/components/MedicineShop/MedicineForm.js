@@ -1,14 +1,16 @@
-import React, { useContext, useState } from 'react'
+
+
+import React, { useContext, useState } from 'react';
 import MedicineDetails from './MedicineDetails';
 import CartContext from '../Store/CartContext';
 import classes from './MedicineForm.module.css';
+// import imagess from '../../assets/medicine.jpg'
 
 const MedicineForm = () => {
-
-  const [medicineName, setMedicineName] = useState("");
-  const [description, setDescription] = useState("");
-  const [price, setPrice] = useState("");
-  const [quantity, setQuantity] = useState("");
+  const [medicineName, setMedicineName] = useState('');
+  const [description, setDescription] = useState('');
+  const [price, setPrice] = useState('');
+  const [quantity, setQuantity] = useState('');
 
   const menuCtx = useContext(CartContext);
 
@@ -26,45 +28,42 @@ const MedicineForm = () => {
 
   const quantityHandler = (e) => {
     setQuantity(e.target.value);
-  }
-  //console.log(menuCtx);
+  };
 
   const submitHandler = (e) => {
     e.preventDefault();
 
     const obj = {
-      name: medicineName, 
+      name: medicineName,
       description: description,
       price: price,
       quant: quantity,
-    }
+    };
 
     menuCtx.addToMenu(obj);
-    //console.log(obj);
 
-    setDescription("");
-    setMedicineName("");
-    setPrice("");
-    setQuantity("");
-
+    setDescription('');
+    setMedicineName('');
+    setPrice('');
+    setQuantity('');
   };
 
   return (
     <div className={classes.container}>
-        <form onSubmit={submitHandler}>
-        <label>Medicine Name: </label>
+      <form onSubmit={submitHandler}>
+        <label>Medicine Name:</label>
         <input type="text" placeholder="Enter medicine name" onChange={medicineNameHandler} value={medicineName} />
-        <label>Description of Medicine: </label>
+        <label>Description of Medicine:</label>
         <input type="text" placeholder="Enter medicine description" onChange={descriptionHandler} value={description} />
-        <label>Medicine Price: </label>
-        <input type="number" placeholder="Enter price" onChange={priceHandler} value={price} /> 
-        <label>Quantity: </label>
+        <label>Medicine Price:</label>
+        <input type="number" placeholder="Enter price" onChange={priceHandler} value={price} />
+        <label>Quantity:</label>
         <input type="number" placeholder="Enter Quantity" onChange={quantityHandler} value={quantity} />
         <button type="submit">Add Medicine</button>
       </form>
-      <MedicineDetails /> 
+      <MedicineDetails />
     </div>
-  )
-}
+  );
+};
 
-export default MedicineForm
+export default MedicineForm;

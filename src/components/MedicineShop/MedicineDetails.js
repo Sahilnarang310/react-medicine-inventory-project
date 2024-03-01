@@ -9,7 +9,7 @@ const MedicineDetails = (props) => {
   //console.log(menuCtx);
   return (
     <div className={classes.container}>
-        <h1>Available Medicines </h1>
+        <h2>Available Medicines </h2>
         <hr />
         <ul className={classes.menuItem}>
         {

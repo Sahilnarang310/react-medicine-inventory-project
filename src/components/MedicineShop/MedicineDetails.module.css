@@ -1,20 +1,31 @@
-.container {
+ /* .container {
     margin: 100px;
-}
+    height: 100%;
+    overflow-y: auto;
+    }  */
+    .container {
+        margin: 0; /* Remove any margin */
+        padding: 20px; /* Add padding for spacing */
+        height: 100vh; /* Set height to 100% of the viewport height */
+        overflow-y: auto; /* Enable vertical scrolling if content overflows */
+    }
+    
 
 .menuItem {
-    background-color: gray;
+    /* flex-grow: 1; */
+    background-color: gray ;
     padding: 5px;
     width: 700px;
     display: block;
     margin:30px auto;
-
+    overflow-y: auto; 
 }
 
 .item{
-    display: flex;
+    /* flex-grow: 1; */
+    display: flex; 
     justify-content: space-between;
-    background-color: greenyellow;
+    background-color:white;
     padding: 5px 10px;
     margin: 2px;
 }

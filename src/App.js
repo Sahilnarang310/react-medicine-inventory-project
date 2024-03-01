@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import Header from './components/Layout/Header';
 import Cart from './components/Cart/Cart';
 import MedicineForm from "./components/MedicineShop/MedicineForm";
-
+import '../src/App.css';
 function App() {
 
   const [show, setShow] = useState(false);
@@ -16,10 +16,12 @@ function App() {
   };
 
   return (
+    <div className="app">
     <div>
       <Header showCartHandler= {showCartHandler} />
       {show && <Cart onClose={hideCartHandler} />}
       <MedicineForm /> 
+    </div>
     </div>
   )
 }
